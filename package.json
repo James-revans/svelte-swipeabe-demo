@@ -17,7 +17,7 @@
    },
    "dependencies": {
       "sirv-cli": "^0.4.4",
-      "svelte-swipeable": "^1.0.4"
+      "svelte-swipeable": "^1.0.5"
    },
    "scripts": {
       "build": "rollup -c",
