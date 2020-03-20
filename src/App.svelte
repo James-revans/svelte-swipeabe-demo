@@ -6,6 +6,7 @@ import { Animations } from 'svelte-swipeable';
   let stiffness = 0.2;
   let damping = 0.6;
   let momentum = 0.2;
+  let generatedCode;
 
   // let options = {
   //   threshX: 100,
@@ -20,6 +21,10 @@ import { Animations } from 'svelte-swipeable';
   //     momentum = 5;
   //   }
   // }
+  function myFunction() {
+  generatedCode.select();
+  document.execCommand('copy');
+}
 </script>
 
 <style>
@@ -138,7 +143,34 @@ import { Animations } from 'svelte-swipeable';
     color: #222; 
     outline: none;
 }
-  
+
+.generated {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+
+}
+
+  .copy-button {
+    padding: 10px 0;
+    background-image: linear-gradient(to right top, #ffc342, #ffca52, #ffd061, #ffd670, #ffdc7e);
+    border-color: transparent;
+    color: black;
+    font-size: 15px;
+    border-radius: 5px;
+  }
+
+  .text-area {
+    margin-top: 10px;
+    resize: none;
+    font-size: 15px;
+    border-radius: 5px;
+    border-color: transparent;
+    line-height: 20px;
+    background-color: #d6d6d6;
+    box-shadow: 0 0 40px 10px rgb(224, 224, 224);
+  }
+
 </style>
 <h1 class="title">Svelte-Swipeable</h1>
 <div class="container">
@@ -182,6 +214,21 @@ import { Animations } from 'svelte-swipeable';
         Will Return: 
         {willReturn}
         <input type="checkbox" bind:checked={willReturn} class="checkbox" id="willReturn">
+      </div>
+      <div class="generated">
+        <button class="copy-button" on:click={myFunction}>Copy to Clipboard!</button>
+        <textarea bind:this={generatedCode} readonly class="text-area" rows="13" cols="40">
+          &lt;Animations 
+              direction={direction} 
+              stiffness={stiffness} 
+              damping={damping} 
+              willReturn={willReturn} 
+              momentum={momentum} &gt
+
+              &lt;div&gt Move me! &lt;/ div&gt
+
+          &lt;/ Animations&gt       
+        </textarea>
       </div>
     </div>
 </div>
