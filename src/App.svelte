@@ -1,6 +1,6 @@
 <script>
 // import swipe from 'svelte-swipeable';
-import { Animations } from 'svelte-swipeable';
+import { Animate } from 'svelte-swipeable';
   let direction = 'any';
   let willReturn = false;
   let stiffness = 0.2;
@@ -175,11 +175,11 @@ import { Animations } from 'svelte-swipeable';
 <h1 class="title">Svelte-Swipeable</h1>
 <div class="container">
 
-    <Animations direction={direction} stiffness={stiffness} damping={damping} willReturn={willReturn} momentum={momentum}>
+    <Animate direction={direction} stiffness={stiffness} damping={damping} willReturn={willReturn} momentum={momentum}>
       <div class="box">
         Move me!
       </div>
-    </Animations>
+    </Animate>
     <div class="settings">
       <div class="input">
         Direction: 
@@ -218,7 +218,7 @@ import { Animations } from 'svelte-swipeable';
       <div class="generated">
         <button class="copy-button" on:click={myFunction}>Copy to Clipboard!</button>
         <textarea bind:this={generatedCode} readonly class="text-area" rows="13" cols="40">
-          &lt;Animations 
+          &lt;Animate 
               direction={direction} 
               stiffness={stiffness} 
               damping={damping} 
@@ -227,13 +227,13 @@ import { Animations } from 'svelte-swipeable';
 
               &lt;div&gt Move me! &lt;/ div&gt
 
-          &lt;/ Animations&gt       
+          &lt;/ Animate&gt       
         </textarea>
       </div>
     </div>
 </div>
 
-  <!-- <Animations
+  <!-- <Animate
     options={options}
     direction={'vertical'} 
     stiffness={0.02} 
@@ -243,38 +243,38 @@ import { Animations } from 'svelte-swipeable';
     onSwipeUp={handleSwipeUp}
     >
     <div class="box">
-      Animations Up!
+      Animate Up!
     </div>
-  </Animations> -->
+  </Animate> -->
 
-  <Animations direction={'horizontal'} stiffness={0.01} damping={0} willReturn={false} momentum={1}>
+  <Animate direction={'horizontal'} stiffness={0.01} damping={0} willReturn={false} momentum={1}>
     <div class="box example-box">
       Hotizontal
     </div>
-  </Animations>
-  <Animations direction={'any'} stiffness={0.2} damping={0} willReturn={false} momentum={0.3}>
+  </Animate>
+  <Animate direction={'any'} stiffness={0.2} damping={0} willReturn={false} momentum={0.3}>
     <div class="box example-box">
       Any Direction
     </div>
-  </Animations>
-  <Animations direction={'up'} stiffness={0.1} damping={0.7} willReturn={false} momentum={0.5}>
+  </Animate>
+  <Animate direction={'up'} stiffness={0.1} damping={0.7} willReturn={false} momentum={0.5}>
     <div class="box example-box">
       Up
     </div>
-  </Animations>
-  <Animations direction={'down'} stiffness={0.1} damping={0.7}>
+  </Animate>
+  <Animate direction={'down'} stiffness={0.1} damping={0.7}>
     <div class="box example-box">
       Down  
     </div>
-  </Animations>
-  <Animations direction={'right'} stiffness={0.1} damping={0.7}>
+  </Animate>
+  <Animate direction={'right'} stiffness={0.1} damping={0.7}>
     <div class="box example-box">
       Right
     </div>
-  </Animations>
-  <Animations direction={'left'} stiffness={0.1} damping={0.5}>
+  </Animate>
+  <Animate direction={'left'} stiffness={0.1} damping={0.5}>
     <div class="box example-box">
       Left
     </div>
-  </Animations>
+  </Animate>
 
